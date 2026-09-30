@@ -1,0 +1,110 @@
+# yaml-language-server: $schema=https://cdn.jsdelivr.net/gh/php-kirigami/kirigami@main/packages/kirigami/kirigami.schema.json
+
+kirigami:
+  project:  Kiridoc
+  baseurl:  https://example.github.io/kiridoc
+  root:     src
+  banner:   banner.txt
+
+  # Any other key here is free-form project data: it becomes a PHP variable of
+  # the same name on every page and in the header / footer includes.
+  author:      Votre nom
+  email:       vous@example.com
+  description: Documentation de cours propulsée par Kirigami.
+  tagline:     Vos cours, vos exercices, en un seul endroit.
+
+
+# SEO: <title>, description, Open Graph, Twitter Card, canonical, favicon and a
+# schema.org JSON-LD graph, derived from the `kirigami:` keys above and each
+# page's PHPDOC.
+seo:
+  image: apple-touch-icon.png   # default og:image (also the <intlink> fallback)
+
+
+prepros:
+  before: _layouts/header.php   # prepended to every page
+  after:  _layouts/footer.php   # appended to every page
+  format: true
+  network: true                 # <doclink> looks up favicons at build time
+  includes: [_lib/functions.php] # course / page helpers
+  types:                        # a page opts in with @type <name>
+    page:                       # title + lead + prose body
+      before: _layouts/types/page.before.php
+      after:  _layouts/types/page.after.php
+    listing:                    # no content: title + lead + list of its sub-pages
+      before: _layouts/types/doc.before.php
+      after:  _layouts/types/doc.after.php
+    course:                     # course home: title + code + page list
+      before: _layouts/types/course.before.php
+      after:  _layouts/types/course.after.php
+    doc:                        # course page: sidebar + prose + prev/next
+      before: _layouts/types/doc.before.php
+      after:  _layouts/types/doc.after.php
+
+
+sass:
+  style: expanded
+
+
+tasks:
+  - name:  css-core
+    type:  sass
+    entry: styles/kirigami.core.scss
+
+  - name:  js-core
+    type:  esbuild
+    entry: scripts/kirigami.core.js
+
+
+# What a client may edit in Kiri Studio (https://github.com/php-kirigami/kiri-studio).
+# Each course is a tree of Markdown pages (`<course>/**/_index.md`): pages can be added
+# under any page, at any depth, and deleted. Add one entry per course.
+studio:
+  types: [doc, listing]          # the page layouts a client may pick
+  include:
+    - path: src/582-111MO/**/_index.md
+      label: Web 1
+      create: true
+      header:
+        type: doc
+        order: ""
+        abstract: ""
+
+    - path: src/exercices-css/**/_index.md
+      label: Exercices CSS
+      create: true
+      header:
+        type: doc
+        order: ""
+        label: Exercice
+        abstract: ""
+        image: ""
+
+
+plugins:
+  # Build-time syntax highlighting for fenced code blocks.
+  - name: "@kirigami/plugin-highlight"
+    active: true
+    options:
+      languages: [php, javascript, bash, shell, json, yaml, css, scss, xml, markdown, html]
+      theme: auto
+      copyButton: true   # needs an esbuild task — `js-core` above
+
+  # Course components (<checklist>, <doclink>, <intlink>, <color>, <quote>, bubbles, …).
+  - name: "@kirigami/plugin-educ"
+    active: true
+
+  # <youtube id="…"> / <vimeo id="…"> — oEmbed video cards, entirely client-side
+  # (the script is bundled into js-core; needs no build-time network).
+  - name: "@kirigami/plugin-embed"
+    active: true
+
+  # <player src="…"> / <playlist src="….m3u"> — audio players with a waveform baked
+  # at build time (cache in _data/player/: commit it).
+  - name: "@kirigami/plugin-player"
+    active: true
+
+  # <clip src="…"> / <inline-clip src="…"> — local video files; the poster is picked
+  # at build time (cache in _data/clip/: commit it).
+  - name: "@kirigami/plugin-clip"
+    active: true

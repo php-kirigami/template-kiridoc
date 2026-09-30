@@ -1,0 +1,9 @@
+/* TEAM */
+
+    Votre nom
+    Contact: vous@example.com
+
+/* SITE */
+
+    Last update: 2026-09-30
+    Software: Kirigami -- https://php-kirigami.github.io

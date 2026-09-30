@@ -1,0 +1,449 @@
+// This site's styles, on top of the tokens + reset from `conf`.
+
+@use "@kirigami/canva/utils" as *;
+@use "@kirigami/canva/prose";   // → `.prose { … }` for Markdown output
+
+// ── Layout primitives ──────────────────────────────────────────────
+.wrap {
+    width: min(100% - 2.5rem, 64rem);
+    margin-inline: auto;
+}
+
+.section { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+
+body {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}
+
+main { flex: 1; }
+
+h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; }
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 1rem; }
+h3 { font-size: 1.1rem; }
+
+a { color: var(--accent); text-underline-offset: 2px; }
+
+code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.1em 0.35em;
+}
+
+pre {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.15rem;
+    overflow-x: auto;
+
+    code { background: none; border: 0; padding: 0; }
+}
+
+.skip-link {
+    position: absolute;
+    left: 0.5rem;
+    top: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transform: translateY(-150%);
+    transition: transform 0.15s;
+
+    &:focus-visible { transform: none; }
+}
+
+// ── Header + nav ───────────────────────────────────────────────────
+.site-header {
+    border-bottom: 1px solid var(--border);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-height: 3.75rem;
+}
+
+.brand {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--ink);
+    text-decoration: none;
+    margin-right: auto;
+}
+
+.site-nav ul {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+}
+
+.site-nav a {
+    color: var(--ink-muted);
+    text-decoration: none;
+
+    &:hover { color: var(--ink); }
+    &[aria-current="page"] { color: var(--accent); }
+}
+
+.theme-toggle {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--ink);
+    cursor: pointer;
+
+    .theme-toggle__sun { display: none; }
+}
+
+:root:not([data-theme="light"]) .theme-toggle {
+    @media (prefers-color-scheme: dark) {
+        .theme-toggle__moon { display: none; }
+        .theme-toggle__sun  { display: block; }
+    }
+}
+:root[data-theme="dark"] .theme-toggle {
+    .theme-toggle__moon { display: none; }
+    .theme-toggle__sun  { display: block; }
+}
+
+.nav-toggle { display: none; }
+
+// ── Buttons ────────────────────────────────────────────────────────
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover { filter: brightness(1.06); }
+
+    &--ghost {
+        background: transparent;
+        color: var(--ink);
+        border: 1px solid var(--border);
+    }
+}
+
+// ── Home ───────────────────────────────────────────────────────────
+.hero {
+    padding-block: clamp(3rem, 9vw, 6rem);
+
+    .lead { margin-block: 1rem 1.5rem; }
+    .btn + .btn { margin-left: 0.5rem; }
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: var(--ink-muted);
+    max-width: 42ch;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+    margin-top: 1.5rem;
+}
+
+.card {
+    padding: 1.25rem;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    h3 { margin-bottom: 0.4rem; }
+    p { color: var(--ink-muted); }
+    code { font-size: 0.82em; }
+}
+
+// ── Prose (Markdown output) ────────────────────────────────────────
+// Base typography for rendered Markdown comes from `@kirigami/canva/prose`
+// (`@use`'d above). Override a knob here if needed, e.g.:
+//   .prose { --prose-measure: 44rem; }
+
+// ── Footer ─────────────────────────────────────────────────────────
+.site-footer {
+    border-top: 1px solid var(--border);
+    padding-block: 1.5rem;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+}
+
+.site-footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+
+// ── Reveal-on-scroll ───────────────────────────────────────────────
+.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s, transform 0.5s;
+
+    &.is-in { opacity: 1; transform: none; }
+}
+
+// ── Mobile ─────────────────────────────────────────────────────────
+@media (max-width: 40rem) {
+    .nav-toggle {
+        display: grid;
+        place-items: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface-2);
+        cursor: pointer;
+
+        span, span::before, span::after {
+            content: "";
+            display: block;
+            width: 1rem;
+            height: 2px;
+            background: var(--ink);
+        }
+        span { position: relative; }
+        span::before { position: absolute; top: -5px; }
+        span::after  { position: absolute; top: 5px; }
+    }
+
+    .site-nav {
+        position: absolute;
+        inset: 100% 0 auto 0;
+        background: var(--surface-2);
+        border-bottom: 1px solid var(--border);
+        display: none;
+
+        &[data-open] { display: block; }
+
+        ul { flex-direction: column; padding: 1rem 1.25rem; }
+    }
+}
+
+// ── Courses ────────────────────────────────────────────────────────
+.badge {
+    display: inline-block;
+    padding: 0.1rem 0.6rem;
+    border-radius: 1rem;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.card--link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+
+    &:hover { border-color: var(--accent); }
+    .badge { margin-bottom: 0.5rem; }
+}
+
+.course__head { margin-bottom: 2rem; }
+
+.course__pages {
+    display: grid;
+    gap: 0.75rem;
+    padding-left: 1.5rem;
+
+    li span {
+        display: block;
+        color: var(--ink-muted);
+        font-size: 0.9rem;
+    }
+}
+
+// ── Course page: sidebar + body ────────────────────────────────────
+.doc {
+    // Wider than the other pages: the text shares the row with the sidebar and the contents.
+    --doc-side: clamp(11rem, 18vw, 14rem);
+    --doc-toc:  clamp(10rem, 15vw, 13rem);
+    width: min(100% - clamp(1.5rem, 4vw, 4rem), 110rem);
+    display: grid;
+    grid-template-columns: var(--doc-side) minmax(0, 1fr);
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    padding-block: 2.5rem;
+}
+
+// `@list cards`: the pages of a course or listing as <intlink> cards.
+.course__cards {
+    display: grid;
+    gap: 0 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(22rem, 100%), 1fr));
+}
+
+.doc-nav {
+    position: sticky;
+    top: 5rem;
+    align-self: start;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+}
+
+.doc-nav__course {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.doc-nav__list {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0;
+    list-style: none;
+
+    a {
+        display: block;
+        padding: 0.3rem 0.6rem;
+        border-left: 0.15rem solid var(--border);
+        color: var(--ink-muted);
+        text-decoration: none;
+
+        &:hover { color: var(--ink); }
+        &[aria-current="page"] {
+            border-left-color: var(--accent);
+            color: var(--accent);
+            font-weight: 600;
+        }
+    }
+}
+
+.doc__pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+
+    a {
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .doc__prev::before { content: "← "; }
+    .doc__next { margin-left: auto; }
+    .doc__next::after { content: " →"; }
+}
+
+@media (max-width: 48rem) {
+    .doc { grid-template-columns: 1fr; gap: 1.5rem; }
+    .doc-nav { position: static; max-height: 12rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
+}
+
+// Media and wide content never push the page sideways.
+.doc__body {
+    --prose-measure: none; // canva caps prose at 42rem; the column itself is fluid (code, tables, cards)
+    overflow-wrap: break-word;
+
+    // Prose lines stay readable on very wide screens; code, tables and cards use the whole column.
+    > p, > ul, > ol, > blockquote { max-width: 80ch; }
+
+    img, video, iframe, svg { max-width: 100%; height: auto; }
+    table { display: block; max-width: 100%; overflow-x: auto; }
+}
+
+.doc__pager {
+    flex-wrap: wrap;
+}
+
+// ── Breadcrumb + nested sidebar ────────────────────────────────────
+// Lives inside .prose, whose list rules (padding, bullets, li + li spacing) must not apply:
+// the extra .doc__body class outranks them.
+.doc__body .breadcrumb {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.25rem 0.5rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li { margin: 0; }
+
+    li:not(:last-child)::after {
+        content: "›";
+        margin-left: 0.5rem;
+        color: var(--ink-muted);
+    }
+
+    a { color: var(--ink-muted); text-decoration: none; }
+    a:hover { color: var(--accent); }
+}
+
+// A level opened under its parent: indented, same rail as the top level.
+.doc-nav__list .doc-nav__list {
+    margin: 0.15rem 0 0.4rem 0.75rem;
+}
+
+// ── Table of contents (right, sticky) ──────────────────────────────
+// Only shown on wide screens, where a third column fits next to the sidebar.
+.toc { display: none; }
+
+@media (min-width: 75rem) {
+    .doc:has(> .toc) { grid-template-columns: var(--doc-side) minmax(0, 1fr) var(--doc-toc); }
+
+    .toc {
+        display: block;
+        position: sticky;
+        top: 5rem;
+        align-self: start;
+        max-height: calc(100vh - 6rem);
+        overflow-y: auto;
+        font-size: 0.9rem;
+
+        ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            display: block;
+            padding: 0.25rem 0 0.25rem 0.75rem;
+            border-left: 0.15rem solid var(--border);
+            color: var(--ink-muted);
+            text-decoration: none;
+
+            &:hover { color: var(--ink); }
+            &[aria-current] { border-left-color: var(--accent); color: var(--accent); font-weight: 600; }
+        }
+    }
+
+    .toc__title {
+        margin-bottom: 0.5rem;
+        font-family: var(--font-heading);
+        font-weight: 700;
+    }
+}

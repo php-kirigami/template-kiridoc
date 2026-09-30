@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            (function(){var e=document.documentElement;e.classList.add("js");try{var t=localStorage.getItem("kirigami-theme");if(t==="dark"||t==="light")e.setAttribute("data-theme",t)}catch(x){}})();
+        </script>
+        <link rel="stylesheet" href="../../../styles/kirigami.core.min.css?###TIMESTAMP###">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Les sélecteurs — Kiridoc</title>
+        <meta name="description" content="Cibler les éléments à mettre en forme.">
+        <meta name="robots" content="index, follow">
+        <meta name="language" content="en">
+        <meta name="generator" content="Kirigami">
+        <meta name="author" content="Votre nom">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Les sélecteurs — Kiridoc">
+        <meta name="twitter:description" content="Cibler les éléments à mettre en forme.">
+        <meta name="twitter:image" content="https://example.github.io/apple-touch-icon.png">
+        <meta property="og:site_name" content="Kiridoc">
+        <meta property="og:locale" content="en">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Les sélecteurs — Kiridoc">
+        <meta property="og:description" content="Cibler les éléments à mettre en forme.">
+        <meta property="og:url" content="https://example.github.io/kiridoc/582-111MO/css/selecteurs/">
+        <meta property="og:image" content="https://example.github.io/apple-touch-icon.png">
+        <link rel="canonical" href="https://example.github.io/kiridoc/582-111MO/css/selecteurs/">
+        <link rel="author" type="text/plain" href="../../../humans.txt">
+        <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+        <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "Organization",
+                        "@id": "https://example.github.io/kiridoc/#organization",
+                        "name": "Kiridoc",
+                        "url": "https://example.github.io/kiridoc/",
+                        "description": "Documentation de cours propulsée par Kirigami.",
+                        "email": "vous@example.com"
+                    },
+                    {
+                        "@type": "WebSite",
+                        "@id": "https://example.github.io/kiridoc/#website",
+                        "url": "https://example.github.io/kiridoc/",
+                        "name": "Kiridoc",
+                        "description": "Documentation de cours propulsée par Kirigami.",
+                        "inLanguage": "en",
+                        "publisher": {
+                            "@id": "https://example.github.io/kiridoc/#organization"
+                        }
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": "https://example.github.io/kiridoc/582-111MO/css/selecteurs/#breadcrumb",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Accueil",
+                                "item": "https://example.github.io/kiridoc/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Web 1",
+                                "item": "https://example.github.io/kiridoc/582-111MO/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "CSS",
+                                "item": "https://example.github.io/kiridoc/582-111MO/css/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 4,
+                                "name": "Les sélecteurs",
+                                "item": "https://example.github.io/kiridoc/582-111MO/css/selecteurs/"
+                            }
+                        ]
+                    },
+                    {
+                        "@type": "WebPage",
+                        "@id": "https://example.github.io/kiridoc/582-111MO/css/selecteurs/#webpage",
+                        "url": "https://example.github.io/kiridoc/582-111MO/css/selecteurs/",
+                        "name": "Les sélecteurs",
+                        "isPartOf": {
+                            "@id": "https://example.github.io/kiridoc/#website"
+                        },
+                        "about": {
+                            "@id": "https://example.github.io/kiridoc/#organization"
+                        },
+                        "inLanguage": "en",
+                        "breadcrumb": {
+                            "@id": "https://example.github.io/kiridoc/582-111MO/css/selecteurs/#breadcrumb"
+                        }
+                    }
+                ]
+            }
+        </script>
+    </head>
+    <body class="page-582-111MO">
+        <a class="skip-link" href="#main">Aller au contenu</a>
+        <header class="site-header">
+            <div class="wrap site-header__inner">
+                <a class="brand" href="../../../">Kiridoc</a>
+                <nav class="site-nav" id="site-nav" aria-label="Principal">
+                    <ul>
+                        <li><a href="../../../">Accueil</a></li>
+                        <li><a href="../../../582-111MO/" aria-current="page">582-111MO</a></li>
+                    </ul>
+                </nav>
+                <button class="theme-toggle" type="button" data-theme-toggle="" aria-label="Basculer le thème sombre">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+                        <path class="theme-toggle__moon" fill="currentColor" d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36A5.5 5.5 0 0 1 12.36 3.1 9.6 9.6 0 0 0 12 3Z"></path>
+                        <g class="theme-toggle__sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+                        </g>
+                    </svg>
+                </button>
+                <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Basculer le menu"><span></span></button>
+            </div>
+        </header>
+        <main id="main">
+            <div class="wrap doc">
+                <aside class="doc-nav" aria-label="Pages du cours">
+                    <a class="doc-nav__course" href="../../../582-111MO/">582-111MO</a>
+                    <ol class="doc-nav__list">
+                        <li><a href="../../../582-111MO/introduction/">Introduction</a></li>
+                        <li><a href="../../../582-111MO/html/">HTML</a></li>
+                        <li>
+                            <a href="../../../582-111MO/css/">CSS</a>
+                            <ol class="doc-nav__list">
+                                <li><a href="../../../582-111MO/css/selecteurs/" aria-current="page">Les sélecteurs</a></li>
+                            </ol>
+                        </li>
+                    </ol>
+                </aside>
+                <article class="doc__body prose">
+                    <nav class="breadcrumb" aria-label="Fil d&apos;Ariane">
+                        <ol>
+                            <li><a href="../../../582-111MO/">Web 1</a></li>
+                            <li><a href="../../../582-111MO/css/">CSS</a></li>
+                        </ol>
+                    </nav>
+                    <h1>Les sélecteurs</h1>
+                    <p class="lead">Cibler les éléments à mettre en forme.</p>
+                    <h2 id="les-trois-slecteurs-de-base">Les trois sélecteurs de base</h2>
+                    <pre><code class="hljs language-css">
+                        <span class="hljs-selector-tag">p</span> { <span class="hljs-attribute">color</span>: <span class="hljs-number">#333</span>; }          <span class="hljs-comment">/* balise */</span>
+                        <span class="hljs-selector-class">.note</span> { <span class="hljs-attribute">font-style</span>: italic; } <span class="hljs-comment">/* classe */</span>
+                        <span class="hljs-selector-id">#entete</span> { <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>; }      <span class="hljs-comment">/* identifiant */</span>
+                    </code></pre>
+                    <h2 id="exercices">Exercices</h2>
+                    <p>Les exercices vivent dans un dossier <code>exercices/</code> sans index : ils ne sont pas dans le menu, on y accède par des liens.</p>
+                    <a class="intlink" href="exercices/flex-1/">
+                        <img class="intlink__image" src="../../../images/intlink/f0aabf04762a.webp" alt="" width="200" height="200" loading="lazy">
+                        <span class="intlink__body">
+                            <strong class="intlink__title">Exercice — Sélecteurs 1</strong>
+                            <span class="intlink__desc">Cibler des éléments avec les classes et les identifiants.</span>
+                        </span>
+                    </a>
+                    <a class="intlink" href="exercices/flex-2/">
+                        <img class="intlink__image" src="../../../images/intlink/f0aabf04762a.webp" alt="" width="200" height="200" loading="lazy">
+                        <span class="intlink__body">
+                            <strong class="intlink__title">Exercice — Sélecteurs 2</strong>
+                            <span class="intlink__desc">Combiner les sélecteurs descendants et les pseudo-classes.</span>
+                        </span>
+                    </a>
+                    <nav class="doc__pager" aria-label="Pages voisines"><a class="doc__prev" href="../../../582-111MO/css/">CSS</a></nav>
+                </article>
+                <nav class="toc" aria-label="Table des matières">
+                    <p class="toc__title">Table des matières</p>
+                    <ol>
+                        <li><a href="#les-trois-slecteurs-de-base">Les trois sélecteurs de base</a></li>
+                        <li><a href="#exercices">Exercices</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </main>
+        <footer class="site-footer">
+            <div class="wrap site-footer__inner">
+                <p>© 2026 Votre nom</p>
+                <p>Propulsé par <a href="https://github.com/php-kirigami/kirigami">Kirigami</a></p>
+            </div>
+        </footer>
+        <script>
+            document.querySelectorAll("pre>code").forEach(function(c){var L=c.innerHTML.replace(/^\n+/,"").replace(/\n[^\S\n]*$/,"").split("\n"),n=1/0;L.forEach(function(l){if(l.trim())n=Math.min(n,l.match(/^[ \t]*/)[0].length)});if(n&&n<1/0)c.innerHTML=L.map(function(l){return l.slice(n)}).join("\n")});
+        </script>
+        <script src="../../../scripts/kirigami.core.min.js?###TIMESTAMP###"></script>
+    </body>
+</html>
