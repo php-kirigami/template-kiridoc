@@ -62,6 +62,7 @@ tasks:
 studio:
   types: [doc, listing]          # the page layouts a client may pick
   pageMedia: true                # each page keeps its own images/ and videos/ next to it
+  pageImage: true                # the client picks each page's @image (link previews, <intlink> cards) from them
   include:
     - path: src/582-111MO/**/_index.md
       label: Web 1

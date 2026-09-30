@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "@kirigami/canva": "^2.7.0",
-    "@kirigami/cli": "^0.1.8",
-    "@kirigami/kirigami": "^3.2.2",
+    "@kirigami/cli": "^0.1.9",
+    "@kirigami/kirigami": "^3.2.3",
     "@kirigami/plugin-clip": "^0.1.1",
     "@kirigami/plugin-educ": "^0.2.0",
     "@kirigami/plugin-embed": "^0.2.1",
