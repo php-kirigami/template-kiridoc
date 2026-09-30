@@ -20,7 +20,7 @@
     "@kirigami/cli": "^0.1.7",
     "@kirigami/kirigami": "^3.2.1",
     "@kirigami/plugin-clip": "^0.1.1",
-    "@kirigami/plugin-educ": "^0.1.0",
+    "@kirigami/plugin-educ": "^0.2.0",
     "@kirigami/plugin-embed": "^0.2.1",
     "@kirigami/plugin-highlight": "^0.3.0",
     "@kirigami/plugin-player": "^0.1.1"

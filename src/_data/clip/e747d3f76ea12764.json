@@ -1,0 +1,19 @@
+{
+	"version": 1,
+	"posterWidth": 960,
+	"samples": 24,
+	"poster": "clip/e747d3f76ea12764.jpg",
+	"width": 960,
+	"height": 640,
+	"timestamp": 1.2000000000000002,
+	"score": 0.5336517095565796,
+	"duration": 1.5,
+	"sourceWidth": 300,
+	"sourceHeight": 200,
+	"metadata": {
+		"major_brand": "isom",
+		"minor_version": "512",
+		"compatible_brands": "isomiso2avc1mp41",
+		"encoder": "Lavf58.76.100"
+	}
+}

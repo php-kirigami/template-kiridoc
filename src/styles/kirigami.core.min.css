@@ -804,6 +804,19 @@ pre code {
   flex-wrap: wrap;
 }
 
+.doc__body hr {
+  height: 1.5rem;
+  margin-block: 2.5rem;
+  border: 0;
+  background: none;
+  text-align: center;
+}
+.doc__body hr::before {
+  content: "• • •";
+  color: var(--accent);
+  letter-spacing: 0.5rem;
+}
+
 .doc__body .breadcrumb {
   margin-bottom: 0.75rem;
   font-size: 0.9rem;
@@ -1780,6 +1793,26 @@ pre code {
   height: 3rem;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.intlink--tool .intlink__body {
+  flex: 1;
+}
+.intlink--tool .intlink__label {
+  font-style: normal;
+}
+
+.intlink--tool .intlink__label {
+  order: -1;
+}
+
+.codepen {
+  display: block;
+  width: 100%;
+  margin-block: 1.25rem;
+  border: 0.0625rem solid var(--border);
+  border-radius: 0.4rem;
+  background-color: var(--surface);
 }
 
 :root {

@@ -373,6 +373,21 @@ pre {
     flex-wrap: wrap;
 }
 
+// `---` between the parts of a page: three dots instead of a rule.
+.doc__body hr {
+    height: 1.5rem;
+    margin-block: 2.5rem;
+    border: 0;
+    background: none;
+    text-align: center;
+
+    &::before {
+        content: "• • •";
+        color: var(--accent);
+        letter-spacing: 0.5rem;
+    }
+}
+
 // ── Breadcrumb + nested sidebar ────────────────────────────────────
 // Lives inside .prose, whose list rules (padding, bullets, li + li spacing) must not apply:
 // the extra .doc__body class outranks them.

@@ -70,6 +70,15 @@ studio:
         order: ""
         abstract: ""
 
+    - path: src/582-215MO/**/_index.md
+      label: Intégration Web
+      create: true
+      header:
+        type: doc
+        order: ""
+        abstract: ""
+        image: ""
+
     - path: src/exercices-css/**/_index.md
       label: Exercices CSS
       create: true
