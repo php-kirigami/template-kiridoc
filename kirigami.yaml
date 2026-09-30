@@ -2,7 +2,7 @@
 
 kirigami:
   project:  Kiridoc
-  baseurl:  https://example.github.io/kiridoc
+  baseurl:  https://php-kirigami.github.io/template-kiridoc
   root:     src
   banner:   banner.txt
 
