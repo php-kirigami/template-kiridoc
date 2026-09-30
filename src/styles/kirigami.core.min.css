@@ -790,9 +790,12 @@ pre code {
 .doc__body > p, .doc__body > ul, .doc__body > ol, .doc__body > blockquote {
   max-width: 80ch;
 }
-.doc__body img, .doc__body video, .doc__body iframe, .doc__body svg {
+.doc__body img, .doc__body video, .doc__body svg {
   max-width: 100%;
   height: auto;
+}
+.doc__body iframe {
+  max-width: 100%;
 }
 .doc__body table {
   display: block;

@@ -365,7 +365,8 @@ pre {
     // Prose lines stay readable on very wide screens; code, tables and cards use the whole column.
     > p, > ul, > ol, > blockquote { max-width: 80ch; }
 
-    img, video, iframe, svg { max-width: 100%; height: auto; }
+    img, video, svg { max-width: 100%; height: auto; }
+    iframe { max-width: 100%; } // keeps its own height (<codepen height="360">)
     table { display: block; max-width: 100%; overflow-x: auto; }
 }
 
