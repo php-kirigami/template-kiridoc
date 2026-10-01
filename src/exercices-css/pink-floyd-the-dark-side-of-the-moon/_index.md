@@ -13,7 +13,7 @@ Aperçu du résultat 👇
 
 ## Matériel
 
-{% doclink ./pink-floyd-the-dark-side-of-the-moon.zip Dossier de départ %}
+{% doclink ./files/pink-floyd-the-dark-side-of-the-moon.zip Dossier de départ %}
 
 ### Police d'écriture 🚓
 
@@ -97,7 +97,7 @@ Changez la largeur de l'élément `.shine` pour que sa valeur par défaut soit d
 
 ## Corrigé
 
-{% doclink ./corrige/pink-floyd-the-dark-side-of-the-moon.zip Zip / Pink Floyd - The Dark Side of the Moon %}
+{% doclink ./files/corrige-pink-floyd-the-dark-side-of-the-moon.zip Zip / Pink Floyd - The Dark Side of the Moon %}
 
 {% doclink https://codepen.io/ZmotriN/pen/rNoxeMz Pen / Pink Floyd - The Dark Side of the Moon %}
 

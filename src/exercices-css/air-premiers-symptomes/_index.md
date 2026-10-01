@@ -13,11 +13,11 @@ Aperçu du résultat 👇
 
 ## Matériel
 
-{% doclink ./air-premiers-symptomes.zip Dossier de départ %}
+{% doclink ./files/air-premiers-symptomes.zip Dossier de départ %}
 
 ### Police d'écriture 🚓
 
-{% doclink ./DisplayDots-4nB4.zip Display Dots %}
+{% doclink ./files/DisplayDots-4nB4.zip Display Dots %}
 
 ### Couleurs 🎨
 
@@ -72,7 +72,7 @@ Afin de respecter le lettrage original, appliquez-lui une déformation verticale
 
 ## Corrigé
 
-{% doclink ./corrige/air-premiers-symptomes.zip Zip / AIR - Premiers Symptômes %}
+{% doclink ./files/corrige-air-premiers-symptomes.zip Zip / AIR - Premiers Symptômes %}
 
 {% doclink https://codepen.io/ZmotriN/pen/eYbpogp Pen / AIR - Premiers Symptômes %}
 

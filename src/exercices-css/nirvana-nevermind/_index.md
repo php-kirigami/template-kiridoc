@@ -13,13 +13,13 @@ Aperçu du résultat 👇
 
 ## Matériel
 
-{% doclink ./nirvana-nevermind.zip Dossier de départ %}
+{% doclink ./files/nirvana-nevermind.zip Dossier de départ %}
 
 ### Polices d'écriture 🚓
 
-{% doclink ./BodoniPosterCompressed.zip Bodoni Poster Compressed %}
+{% doclink ./files/BodoniPosterCompressed.zip Bodoni Poster Compressed %}
 
-{% doclink ./FranklinGothicHeavy.zip Franklin Gothic Heavy %}
+{% doclink ./files/FranklinGothicHeavy.zip Franklin Gothic Heavy %}
 
 ### Couleurs 🎨
 
@@ -114,7 +114,7 @@ L'animation doit durer _0.5 seconde_, faire des allers-retours, jouer de façon 
 
 ## Corrigé
 
-{% doclink ./corrige/nirvana-nevermind.zip Zip / Nirvana - Nevermind %}
+{% doclink ./files/corrige-nirvana-nevermind.zip Zip / Nirvana - Nevermind %}
 
 {% doclink https://codepen.io/ZmotriN/pen/MWZKKOw Pen / Nirvana - Nevermind %}
 
